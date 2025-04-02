@@ -31,7 +31,7 @@ param (
     [switch]$TerminalServerMode,
     [switch]$DisableLogging
 )
-
+$ProcessName = $ProcessName.Replace("'", "").Replace('"', "") -split ","
 $ErrorActionPreference = [System.Management.Automation.ActionPreference]::Stop
 Push-Location $PSScriptRoot
 
